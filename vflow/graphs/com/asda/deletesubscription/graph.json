@@ -1,0 +1,67 @@
+{
+    "properties": {},
+    "description": "Delete Subscript",
+    "processes": {
+        "sapabapoperator1": {
+            "component": "com.sap.abap.sap",
+            "metadata": {
+                "label": "Resilience Subscription Eraser V1",
+                "x": 316,
+                "y": 134,
+                "height": 80,
+                "width": 120,
+                "extensible": true,
+                "generation": 1,
+                "config": {
+                    "connectionID": "BW4HANA",
+                    "operatorID": "com.sap.abap.subscr.eraser.v1",
+                    "readerObj": "All",
+                    "subscriptionType": "New",
+                    "context": "",
+                    "extractionMode": "",
+                    "subscriptionName": "default_<target>",
+                    "allSubscrID": "6045BD8CFD151EEDB3A584D16C4C94DD"
+                },
+                "additionaloutports": [
+                    {
+                        "name": "out",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "graphterminator1": {
+            "component": "com.sap.util.graphTerminator",
+            "metadata": {
+                "label": "Graph Terminator",
+                "x": 712,
+                "y": 308,
+                "height": 80,
+                "width": 120,
+                "generation": 1,
+                "config": {}
+            }
+        }
+    },
+    "groups": [],
+    "connections": [
+        {
+            "metadata": {
+                "points": "440,174 573.5,174 573.5,348 707,348"
+            },
+            "src": {
+                "port": "out",
+                "process": "sapabapoperator1"
+            },
+            "tgt": {
+                "port": "stop",
+                "process": "graphterminator1"
+            }
+        }
+    ],
+    "inports": {},
+    "outports": {},
+    "metadata": {
+        "generation": 1
+    }
+}
